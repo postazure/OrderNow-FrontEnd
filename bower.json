@@ -1,0 +1,20 @@
+{
+  "name": "FrontEnd_OrderNow",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Max Gordon <gordonmaxc@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "www.deliverynowsf.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery": "~2.1.3"
+  }
+}
