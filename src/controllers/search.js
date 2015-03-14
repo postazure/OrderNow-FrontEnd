@@ -5,11 +5,13 @@ $('form').on('submit', function (e) {
 
 function getResults(searchTerms) {
   var query = compileSearchQuery(searchTerms)
-  searchAdapter.call(query, function (res) {
-    console.log("expected",res)
-
-
-
+  searchAdapter.index(query, function (res) {
+    if (res.records_found) {
+      var html = template({restaurants: res.results});
+      $('#restaurant-index').html(html)
+    }else{
+      $('#restaurant-index').html("<h1>Sorry No Results Found</h1>")
+    }
 
   })
 }

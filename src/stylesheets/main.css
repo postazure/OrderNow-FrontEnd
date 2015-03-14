@@ -1,3 +1,23 @@
-div.search{
-  width: 100%;
+#header{
+  width:100%;
+  text-align:center;
+  background-color: #313B74;
+  padding-bottom: 3%
+}
+#header h1{
+  color:#FFF3AA;
+  margin-bottom: 1%;
+}
+
+#search-container{
+  height:85vh;
+  overflow:scroll;
+}
+
+.restaurant{
+  background-color: #804E15;
+  color: #FFF3AA;
+  border-top: 1px solid #552E00;
+  padding: 5%;
+
 }
