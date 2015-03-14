@@ -1,14 +1,15 @@
 $('#restaurant-index').on('click','.restaurant', function (e) {
   e.preventDefault();
-  var restaurant = $(this)
-  getRestaurantInfo(restaurant.data("id"));
-  setToActive(restaurant)
+  getRestaurantInfo($(this));
 })
 
-function getRestaurantInfo(id) {
-  searchAdapter.show(id, function (res) {
-    // console.log("expected",res)
+function getRestaurantInfo(restaurantNode) {
+  searchAdapter.show(restaurantNode.data("id"), function (res) {
+    console.log(res)
+    setToActive(restaurantNode)
 
+    // var html = template({restaurants: res});
+    // $('#restaurant-index').html(html)
 
 
 
