@@ -37,12 +37,51 @@
     </script>
 
     <script id="restaurant-details" type="text/x-handlebars-template">
-      <img class="ui top aligned tiny image" src={{logo_url}}>
-      <p>
-        [Restaurant Details]
-        {{name}}
-        {{phone_number}}
-      </p>
+      <div class="ui grid">
+        <div class="four wide column">
+          <img class="ui avatar big image" src={{restaurant.logo_url}}>
+        </div>
+        <div class="six wide column">
+          <div class="ui list">
+            <div class="item">
+              <div class="header">Restaurant Name</div>
+              {{restaurant.name}}
+            </div>
+            <div class="item">
+              <div class="header">Phone</div>
+              {{restaurant.phone_number}}
+            </div>
+            <div class="item">
+              <div class="header">Delivery Service</div>
+              {{restaurant.source_name}}
+            </div>
+            <div class="item">
+              <div class="header">Tags</div>
+              {{#each restaurant.tags}}
+                {{text}}
+              {{/each}}
+            </div>
+          </div>
+        </div>
+        <div class="six wide column">
+          <div class="ui list">
+            <div class="item">
+              <div class="header">Yelp Rating</div>
+              <img src={{restaurant.yelp_info.rating_image_url}} alt="" />
+            </div>
+            <div class="item">
+              <div class="header">Reviewed</div>
+              {{restaurant.yelp_info.review_count}} times
+            </div>
+            <div class="item">
+              <div class="header">From Yelp</div>
+              {{restaurant.yelp_info.snippet_text}}
+            </div>
+          </div>
+
+
+        </div>
+      </div>
     </script>
 
 
