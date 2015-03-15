@@ -7,7 +7,7 @@ function getResults(searchTerms) {
   var query = compileSearchQuery(searchTerms)
   searchAdapter.index(query, function (res) {
     if (res.records_found) {
-      setTemplate(res.results)
+      setList(res.results)
     }else{
       $('#restaurant-index').html("<h1>Sorry No Results Found</h1>")
     }

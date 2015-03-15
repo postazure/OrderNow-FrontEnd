@@ -5,12 +5,8 @@ $('#restaurant-index').on('click','.restaurant', function (e) {
 
 function getRestaurantInfo(restaurantNode) {
   searchAdapter.show(restaurantNode.data("id"), function (res) {
-    console.log(res)
     setToActive(restaurantNode)
-
-    // var html = template({restaurants: res});
-    // $('#restaurant-index').html(html)
-
+    setDetails(res)
 
 
   })

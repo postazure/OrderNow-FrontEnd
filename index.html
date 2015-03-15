@@ -31,16 +31,18 @@
         <div class="title">
           <h3>{{name}}</h3>
         </div>
-        <div class="content">
-          {{!-- <img class="ui top aligned tiny image" src={{yelp_info.snippet_image_url}}> --}}
-
-          <p>
-            {{name}}
-            {{phone_number}}
-          </p>
-        </div>
+        <div class="content"></div>
       </div>
       {{/each}}
+    </script>
+
+    <script id="restaurant-details" type="text/x-handlebars-template">
+      <img class="ui top aligned tiny image" src={{logo_url}}>
+      <p>
+        [Restaurant Details]
+        {{name}}
+        {{phone_number}}
+      </p>
     </script>
 
 
