@@ -13,11 +13,15 @@ function getRestaurantInfo(restaurantNode) {
 }
 
 function setToActive(div) {
-  $(".title.active").removeClass("active")
-  $(".content.active").removeClass("active")
+  var alreadyActive = !$(div.children()[0]).hasClass("active");
+  console.log(alreadyActive);
+  if (alreadyActive) {
+    $(".title.active").removeClass("active")
+    $(".content.active").removeClass("active")
+  }
   var children = div.children();
   children.each(function (i) {
     var child = $(children[i]);
-    child.addClass("active");
+    child.toggleClass("active");
   });
 }

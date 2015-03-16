@@ -13,5 +13,4 @@ function setDetails(restaurant) {
   console.log(restaurant)
   var html = detailsTemplate({restaurant:restaurant});
   $('.content.active').html(html)
-  // $('.content.active').html("<h1>Something is missing here</h1>")
 }
