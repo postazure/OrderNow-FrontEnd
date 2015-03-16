@@ -29,7 +29,14 @@
       {{#each restaurants}}
       <div class="restaurant" data-id={{id}}>
         <div class="title">
-          <h3>{{name}}</h3>
+          <h4>
+            <div class="truncate">
+              {{name}}
+            </div>
+            <div class="ui pull-right label">
+              <i class="clock icon"></i> {{delivery_time}}
+            </div>
+          </h4>
         </div>
         <div class="content"></div>
       </div>

@@ -5,6 +5,10 @@ var detailsSource = $('#restaurant-details').html();
 var detailsTemplate = Handlebars.compile(detailsSource);
 
 function setList(restaurants) {
+  $.each(restaurants, function (i, restaurant) {
+    restaurant.delivery_time = 23 // set historic delivery time average
+  })
+
   var html = listTemplate({restaurants: restaurants});
   $('#restaurant-index').html(html)
 }

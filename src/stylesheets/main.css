@@ -14,5 +14,17 @@
 
 .restaurant{
   border-top: 1px solid #552E00;
-  padding: 5%;
+  padding: 2%;
+}
+
+.pull-right{
+  float:right;
+}
+
+.truncate {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
 }
