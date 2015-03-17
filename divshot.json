@@ -1,0 +1,6 @@
+{
+  "name": "delivery-now-sf",
+  "root": "./",
+  "clean_urls": true,
+  "error_page": "error.html"
+}
