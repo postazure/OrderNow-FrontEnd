@@ -5,10 +5,10 @@ var detailsSource = $('#restaurant-details').html();
 var detailsTemplate = Handlebars.compile(detailsSource);
 
 function setList(restaurants) {
-  getCurrentTimes(restaurants)
   $.each(restaurants, function (i, restaurant) {
-    // restaurant.delivery_time = 23 // set historic delivery time average
+    restaurant.delivery_time = 75 // set historic delivery time average
   })
+  getCurrentTimes(restaurants)
 
   var html = listTemplate({restaurants: restaurants});
   $('#restaurant-index').html(html)
@@ -20,11 +20,10 @@ function setDetails(restaurant) {
   $('.content.active').html(html)
 }
 
-
 function orderList() {
   var restaurantNodeList = $(".restaurant")
   restaurantNodeList.sort(function(a, b){
-    return $(a).data("delivery-time")-$(b).data("delivery-time")
+    return parseInt($(a).data("deliveryTime"))-parseInt($(b).data("deliveryTime"))
   });
-  $("#restaurant-list").html(restaurantNodeList);
+  $("#restaurant-index").append(restaurantNodeList);
 }

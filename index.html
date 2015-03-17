@@ -22,7 +22,7 @@
 
     <script id="restaurant-list" type="text/x-handlebars-template">
       {{#each restaurants}}
-      <div class="restaurant" data-id={{id}}>
+      <div class="restaurant" data-id={{id}} data-delivery-time={{delivery_time}}>
         <div class="title">
           <h4>
             <div class="truncate">
@@ -30,7 +30,7 @@
             </div>
             <div class="ui pull-right label">
               <i class="clock icon"></i>
-              <span class="delivery-time"></span>
+              <span class="delivery-time">{{delivery_time}}</span>
             </div>
           </h4>
         </div>

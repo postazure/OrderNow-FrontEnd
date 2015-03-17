@@ -31,12 +31,12 @@ function getCurrentTimes(restaurants) {
       var max_delivery_time = res.max_delivery_time
       var min_delivery_time = res.min_delivery_time
       var average = (max_delivery_time + min_delivery_time)/2 + additional_prep_duration + default_prep_duration
+      restaurant.delivery_time = Math.floor(average);
 
-      restaurant.delivery_time = average;
       $('.restaurant[data-id="'+restaurant.id+'"] .delivery-time').text(restaurant.delivery_time)
-      $('.restaurant[data-id="'+restaurant.id+'"]').data("delivery-time", restaurant.delivery_time)
+      $('.restaurant[data-id="'+restaurant.id+'"]').data("deliveryTime", restaurant.delivery_time)
 
-      // orderList()
+      orderList()
     })
   })
 }
