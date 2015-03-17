@@ -24,7 +24,7 @@ function getCurrentTimes(restaurants) {
   $.each(restaurants, function (i, restaurant) {
     $.get(restaurant.source_url)
       .done(function (res) {
-
+      console.log(restaurant.source_url);
       //oa specific
       var default_prep_duration = res.default_prep_duration
       var additional_prep_duration = res.additional_prep_duration
@@ -34,6 +34,8 @@ function getCurrentTimes(restaurants) {
       restaurant.delivery_time = Math.floor(average);
 
       $('.restaurant[data-id="'+restaurant.id+'"] .delivery-time').text(restaurant.delivery_time)
+      $('.restaurant[data-id="'+restaurant.id+'"] .hidden').removeClass("hidden")
+      $('.restaurant[data-id="'+restaurant.id+'"] .loader').remove()
       $('.restaurant[data-id="'+restaurant.id+'"]').data("deliveryTime", restaurant.delivery_time)
 
       orderList()

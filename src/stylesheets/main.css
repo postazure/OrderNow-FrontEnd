@@ -14,7 +14,7 @@
 
 .restaurant{
   border-top: 1px solid #552E00;
-  padding: 1%;
+  padding: 1.5%;
 }
 
 .pull-right{
@@ -27,4 +27,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
+}
+
+.hidden{
+  visibility:hidden;
 }
