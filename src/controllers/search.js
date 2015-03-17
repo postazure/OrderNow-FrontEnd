@@ -34,9 +34,9 @@ function getCurrentTimes(restaurants) {
 
       restaurant.delivery_time = average;
       $('.restaurant[data-id="'+restaurant.id+'"] .delivery-time').text(restaurant.delivery_time)
+      $('.restaurant[data-id="'+restaurant.id+'"]').data("delivery-time", restaurant.delivery_time)
 
+      // orderList()
     })
-
   })
-
 }

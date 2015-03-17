@@ -56,29 +56,33 @@
               <div class="header">Delivery Service</div>
               {{restaurant.source_name}}
             </div>
-            <div class="item">
-              <div class="header">Tags</div>
-              {{#each restaurant.tags}}
-                {{text}}
-              {{/each}}
-            </div>
+            {{#if restaurant.tags}}
+              <div class="item">
+                <div class="header">Tags</div>
+                {{#each restaurant.tags}}
+                  {{text}}
+                {{/each}}
+              </div>
+            {{/if}}
           </div>
         </div>
         <div class="eight wide column">
-          <div class="ui list">
-            <div class="item">
-              <div class="header">Yelp Rating</div>
-              <img src={{restaurant.yelp_info.rating_image_url}} alt="" />
+          {{#if restaurant.yelp_info.rating_image_url}}
+            <div class="ui list">
+              <div class="item">
+                <div class="header">Yelp Rating</div>
+                <img src={{restaurant.yelp_info.rating_image_url}} alt="" />
+              </div>
+              <div class="item">
+                <div class="header">Reviewed</div>
+                {{restaurant.yelp_info.review_count}} times
+              </div>
+              <div class="item">
+                <div class="header">From Yelp</div>
+                {{restaurant.yelp_info.snippet_text}}
+              </div>
             </div>
-            <div class="item">
-              <div class="header">Reviewed</div>
-              {{restaurant.yelp_info.review_count}} times
-            </div>
-            <div class="item">
-              <div class="header">From Yelp</div>
-              {{restaurant.yelp_info.snippet_text}}
-            </div>
-          </div>
+          {{/if}}
         </div>
       </div>
     </script>

@@ -19,3 +19,12 @@ function setDetails(restaurant) {
   var html = detailsTemplate({restaurant:restaurant});
   $('.content.active').html(html)
 }
+
+
+function orderList() {
+  var restaurantNodeList = $(".restaurant")
+  restaurantNodeList.sort(function(a, b){
+    return $(a).data("delivery-time")-$(b).data("delivery-time")
+  });
+  $("#restaurant-list").html(restaurantNodeList);
+}
