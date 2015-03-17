@@ -5,8 +5,9 @@ var detailsSource = $('#restaurant-details').html();
 var detailsTemplate = Handlebars.compile(detailsSource);
 
 function setList(restaurants) {
+  getCurrentTimes(restaurants)
   $.each(restaurants, function (i, restaurant) {
-    restaurant.delivery_time = 23 // set historic delivery time average
+    // restaurant.delivery_time = 23 // set historic delivery time average
   })
 
   var html = listTemplate({restaurants: restaurants});
