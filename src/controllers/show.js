@@ -11,7 +11,6 @@ $('#restaurant-index').on('click', '.visit-source', function (e) {
 
 $('#restaurant-index').on('click', '.visit-yelp', function (e) {
   var yelpUrl = $(this).data("yelpurl")
-    // .replace(".json?client_name=computer","");
   location.href = yelpUrl;
 })
 
@@ -23,11 +22,9 @@ function getRestaurantInfo(restaurantNode) {
 }
 
 function setToActive(div) {
-  // var alreadyActive = !$(div.children()[0]).hasClass("active");
-  // if (alreadyActive) {
-    $(".title.active").removeClass("active")
-    $(".content.active").removeClass("active")
-  // }
+  $(".title.active").removeClass("active")
+  $(".content.active").removeClass("active")
+
   var children = div.children();
   children.each(function (i) {
     var child = $(children[i]);
