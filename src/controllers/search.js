@@ -2,6 +2,7 @@ $('form').on('submit', function (e) {
   e.preventDefault();
   $('#search-field').parent(".search").addClass('loading')
   getResults($('#search-field').val());
+  $('#search-form i').focus()
 })
 
 function getResults(searchTerms) {
