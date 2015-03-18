@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/semantic-ui/dist/semantic.min.css">
     <link rel="stylesheet" href="src/stylesheets/main.css">
+    <link rel="stylesheet" href="src/stylesheets/colors.css">
   </head>
   <body>
-    <div id="header" class="ui teal label">
+    <div id="header">
       <h1>Delivery Now SF</h1>
       <form>
         <div class="ui icon input search" >
@@ -22,7 +23,7 @@
 
     <script id="restaurant-list" type="text/x-handlebars-template">
       {{#each restaurants}}
-      <div class="restaurant" data-id={{id}} data-delivery-time={{delivery_time}}>
+      <div class="restaurant" data-id={{id}} data-delivery-time={{delivery_time}} data-sourceurl={{source_url}}>
         <div class="title">
           <h4>
             <div class="truncate">
@@ -36,7 +37,7 @@
             </span>
           </h4>
         </div>
-        <div class="content"></div>
+        <div class="ui segment content"></div>
       </div>
       {{/each}}
     </script>
@@ -44,7 +45,12 @@
     <script id="restaurant-details" type="text/x-handlebars-template">
       <div class="ui stackable grid">
         <div class="four wide column">
-          <img class="ui avatar small image" src={{restaurant.logo_url}}>
+          <div class="logo">
+            <img class="ui medium rounded image" src={{restaurant.logo_url}}>
+            <div class="ui purple button visit-source">View Menu</div>
+            <div class="divider"></div>
+            <div class="ui youtube button visit-yelp" data-yelpurl={{restaurant.yelp_url}}><i class="yelp icon"></i> Yelp</div>
+          </div>
         </div>
 
         <div class="four wide column">

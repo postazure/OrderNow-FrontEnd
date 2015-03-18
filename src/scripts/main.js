@@ -17,7 +17,6 @@ function setList(restaurants) {
 }
 
 function setDetails(restaurant) {
-  console.log(restaurant)
   var html = detailsTemplate({restaurant:restaurant});
   $('.content.active').html(html)
 }
