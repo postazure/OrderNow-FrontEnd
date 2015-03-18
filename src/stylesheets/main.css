@@ -48,10 +48,18 @@
 }
 
 .logo{
+  width:100%
+}
+
+.logo img{
   width:150px;
   margin: auto;
 }
 
 .divider{
   height:5px;
+}
+
+.input{
+  width:100%;
 }
