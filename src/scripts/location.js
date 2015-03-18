@@ -16,17 +16,17 @@ function setPosition(position) {
 function showError(error) {
   switch(error.code) {
     case error.PERMISSION_DENIED:
-        throw "User denied the request for Geolocation."
-        break;
+      throw "User denied the request for Geolocation."
+      break;
     case error.POSITION_UNAVAILABLE:
-        throw "Location information is unavailable."
-        break;
+      throw "Location information is unavailable."
+      break;
     case error.TIMEOUT:
-        throw "The request to get user location timed out."
-        break;
+      throw "The request to get user location timed out."
+      break;
     case error.UNKNOWN_ERROR:
-        throw "An unknown error occurred."
-        break;
+      throw "An unknown error occurred."
+      break;
   }
 }
 
