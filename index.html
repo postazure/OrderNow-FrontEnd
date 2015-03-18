@@ -3,7 +3,7 @@
   <head>
     <title>DeliveryNowSF</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./bower_components/semantic-ui/dist/semantic.min.css">
+    <link rel="stylesheet" href="bower_components/semantic-ui/dist/semantic.min.css">
     <link rel="stylesheet" href="src/stylesheets/main.css">
   </head>
   <body>
@@ -43,8 +43,11 @@
 
     <script id="restaurant-details" type="text/x-handlebars-template">
       <div class="ui stackable grid">
-        <div class="eight wide column">
+        <div class="four wide column">
           <img class="ui avatar small image" src={{restaurant.logo_url}}>
+        </div>
+
+        <div class="four wide column">
           <div class="ui list">
             <div class="item">
               <div class="header">Restaurant Name</div>
@@ -89,9 +92,9 @@
       </div>
     </script>
 
-    <script src="./bower_components/jQuery/dist/jquery.min.js"></script>
-    <script src="./bower_components/handlebars/handlebars.min.js"></script>
-    <script src="./bower_components/semantic-ui/dist/semantic.min.js"></script>
+    <script src="bower_components/jQuery/dist/jquery.min.js"></script>
+    <script src="bower_components/handlebars/handlebars.min.js"></script>
+    <script src="bower_components/semantic-ui/dist/semantic.min.js"></script>
     <script src="src/controllers/search.js"></script>
     <script src="src/controllers/show.js"></script>
     <script src="src/adapters/restaurant.js"></script>
