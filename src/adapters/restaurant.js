@@ -1,5 +1,6 @@
 var searchAdapter = {
-  url: "https://delivery-now-sf.herokuapp.com/restaurants",
+  // url: "https://delivery-now-sf.herokuapp.com/restaurants",
+  url: "http://localhost:3000/restaurants",
   index: function (query, cb) {
     var data = query ? {"k": query}:null;
     $.ajax({
