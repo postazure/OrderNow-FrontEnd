@@ -10,8 +10,10 @@ var orderAheadAdapter = {
     $.ajax({
       url: this.url + this.restaurantId(restaurant) + this.suffix,
       success:function (res) {
-        restaurant.delivery_time = getDeliveryTime(res)
-        restaurant.valid_zone = isValidDeliveryLocation(res, restaurant)
+        restaurant.delivery_time = getDeliveryTime(res);
+        restaurant.valid_zone = isValidDeliveryLocation(res, restaurant);
+
+        historicAdapter.report(restaurant);
         cb(restaurant)
       }
     });
