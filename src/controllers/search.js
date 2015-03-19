@@ -1,6 +1,7 @@
 $('form').on('submit', function (e) {
   e.preventDefault();
   $('#search-field').parent(".search").addClass('loading')
+  $("#restaurant-index").prepend("<div id='main-loader' class='ui active dimmer'><div class='ui loader'></div></div>")
   getResults($('#search-field').val());
   $('#search-field').blur()
 })
@@ -9,10 +10,12 @@ function getResults(searchTerms) {
   var query = compileSearchQuery(searchTerms)
   searchAdapter.index(query, function (res) {
     if (res.records_found) {
+      window.resCount = res.results.length;
       $('#search-field').parent(".search").removeClass('loading')
       setList(res.results)
     }else{
       $('#restaurant-index').html("<h1>Sorry No Results Found</h1>")
+      $("#main-loader").fadeOut();
     }
   })
 }

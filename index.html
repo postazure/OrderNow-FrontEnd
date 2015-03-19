@@ -20,12 +20,16 @@
       <form id="search-form">
         <div class="ui icon input search" >
           <input class="prompt" type="text" placeholder="Name, or Keywords..." id="search-field">
+          <i type="submit" class="search icon"></i>
         </div>
       </form>
     </div>
-    <div id="search-container">
-      <div id="restaurant-index" class="ui accordion"></div>
-    </div>
+    
+
+      <div id="search-container">
+        <div id="restaurant-index" class="ui accordion"></div>
+      </div>
+
 
     <script id="restaurant-list" type="text/x-handlebars-template">
       {{#each restaurants}}
