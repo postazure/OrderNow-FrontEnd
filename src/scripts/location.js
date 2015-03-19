@@ -8,9 +8,10 @@ function getLocation() {
 
 function setPosition(position) {
   // console.log("Lat", position.coords.latitude);
-  // console.log("Lat", position.coords.longitude);
+  // console.log("Lng", position.coords.longitude);
   window.clientLat = position.coords.latitude;
   window.clientLng = position.coords.longitude;
+  $("#gps-indicator").removeClass("hidden");
 }
 
 function showError(error) {

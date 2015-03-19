@@ -11,6 +11,7 @@ var orderAheadAdapter = {
       url: this.url + this.restaurantId(restaurant) + this.suffix,
       success:function (res) {
         restaurant.delivery_time = getDeliveryTime(res)
+        restaurant.valid_zone = isValidDeliveryLocation(res, restaurant)
         cb(restaurant)
       }
     });
@@ -40,4 +41,23 @@ function getTimeFromDistance(res) {
   var minute_increment = res.store_scaling_delivery_attributes.minute_increment;
   var dist = getDistance(latitude, longitude, "M")
   return (dist*mile_interval*minute_increment)
+}
+
+function isValidDeliveryLocation(res, restaurant) {
+  if (!window.clientLat) { return true }
+
+  var store_delivery_zones = res.store_delivery_zones;
+  var validity = false
+  $.each(store_delivery_zones, function (i, geo) {
+    var radius = parseFloat(geo.radius);
+    var lat = parseFloat(geo.latitude);
+    var lng = parseFloat(geo.longitude);
+    var dist = getDistance(lat, lng, "M")
+    if (dist <= radius) {
+      validity = true
+    }else {
+      removeInvalid(restaurant)
+    }
+  })
+  return validity;
 }

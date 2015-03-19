@@ -1,15 +1,18 @@
+getLocation()
+
 var listSource = $('#restaurant-list').html();
 var listTemplate = Handlebars.compile(listSource);
 
 var detailsSource = $('#restaurant-details').html();
 var detailsTemplate = Handlebars.compile(detailsSource);
 
-getLocation()
 
 function setList(restaurants) {
   $.each(restaurants, function (i, restaurant) {
-    restaurant.delivery_time = 75 // set historic delivery time average
+    restaurant.delivery_time = 75; // set historic delivery time average
+    restaurant.valid_zone = true;
   })
+
   getCurrentTimes(restaurants)
 
   var html = listTemplate({restaurants: restaurants});
@@ -27,4 +30,9 @@ function orderList() {
     return parseInt($(a).data("deliveryTime"))-parseInt($(b).data("deliveryTime"))
   });
   $("#restaurant-index").append(restaurantNodeList);
+}
+
+function removeInvalid(restaurant) {
+  var restaurantNode = $('.restaurant[data-id="'+restaurant.id+'"]')
+  restaurantNode.remove()
 }
