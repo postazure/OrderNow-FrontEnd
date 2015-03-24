@@ -1,0 +1,8 @@
+#search-form .input{
+  width:90%;
+}
+
+#search-container{
+  height:85vh;
+  overflow:scroll;
+}

@@ -1,0 +1,15 @@
+.restaurant{
+  border-color:#6C6B7F;
+  background-color: #D8D6FF;
+  opacity: 0.85;
+
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  /*margin-left: 3px;
+  margin-right: 3px;*/
+}

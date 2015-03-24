@@ -1,0 +1,20 @@
+#header{
+  width:100%;
+  text-align:center;
+  padding-bottom: 3%;
+  opacity: 0.8;
+  padding-top:1%
+}
+
+#header h1{
+  margin-bottom: 1%;
+}
+
+#header{
+  background-color: #47457F;
+  color: #D8D6FF;
+}
+
+.title.active h4{
+  color:#47457F;
+}

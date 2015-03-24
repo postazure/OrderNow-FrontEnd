@@ -14,7 +14,7 @@ function getResults(searchTerms) {
       $('#search-field').parent(".search").removeClass('loading')
       setList(res.results)
     }else{
-      $('#restaurant-index').html("<h1>Sorry No Results Found</h1>")
+      $('#restaurant-index').html("<h1 id='no-results'>Sorry No Results Found</h1>")
       $("#main-loader").fadeOut();
     }
   })
