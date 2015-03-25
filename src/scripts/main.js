@@ -12,7 +12,6 @@ var orderAheadAdapter = new OrderAheadAdapter(historicAdapter)
 var searchController = new SearchController(orderAheadAdapter)
 var showController = new ShowController(searchAdapter)
 
-
 function removeInvalid(restaurant) {
   var restaurantNode = $('.restaurant[data-id="'+restaurant.id+'"]')
   restaurantNode.remove()
