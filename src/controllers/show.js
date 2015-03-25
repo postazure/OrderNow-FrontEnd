@@ -1,6 +1,6 @@
 $('#restaurant-index').on('click','.restaurant', function (e) {
   e.preventDefault();
-  getRestaurantInfo($(this));
+  showController.getRestaurantInfo($(this));
 })
 
 $('#restaurant-index').on('click', '.visit-source', function (e) {
@@ -14,14 +14,41 @@ $('#restaurant-index').on('click', '.visit-yelp', function (e) {
   location.href = yelpUrl;
 })
 
-function getRestaurantInfo(restaurantNode) {
-  searchAdapter.show(restaurantNode.data("id"), function (res) {
-    setToActive(restaurantNode)
-    setDetails(res)
+//
+// function getRestaurantInfo(restaurantNode) {
+//   searchAdapter.show(restaurantNode.data("id"), function (res) {
+//     setToActive(restaurantNode)
+//     setDetails(res)
+//   })
+// }
+//
+// function setToActive(div) {
+//   $(".title.active").removeClass("active")
+//   $(".content.active").removeClass("active")
+//
+//   var children = div.children();
+//   children.each(function (i) {
+//     var child = $(children[i]);
+//     child.addClass("active");
+//   });
+// }
+
+
+// OO Version
+
+var ShowController = function (searchAdapter) {
+  this.searchAdapter = searchAdapter
+}
+
+ShowController.prototype.getRestaurantInfo = function (restaurantNode) {
+  var _this = this
+  this.searchAdapter.show(restaurantNode.data("id"), function (res) {
+    _this.setToActive(restaurantNode)
+    _this.setDetails(res)
   })
 }
 
-function setToActive(div) {
+ShowController.prototype.setToActive = function (div) {
   $(".title.active").removeClass("active")
   $(".content.active").removeClass("active")
 
@@ -30,4 +57,9 @@ function setToActive(div) {
     var child = $(children[i]);
     child.addClass("active");
   });
+}
+
+ShowController.prototype.setDetails = function (restaurant) {
+  var html = detailsTemplate({restaurant:restaurant});
+  $('.content.active').html(html)
 }
