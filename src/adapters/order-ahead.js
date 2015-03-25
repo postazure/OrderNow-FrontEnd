@@ -52,7 +52,7 @@ OrderAheadAdapter.prototype.getTimeFromDistance = function (res) {
 
 OrderAheadAdapter.prototype.isValidDeliveryLocation = function (res, restaurant) {
   if (!window.clientLat) { return true }
-
+  var _this = this;
   var store_delivery_zones = res.store_delivery_zones;
   var validity = false
   $.each(store_delivery_zones, function (i, geo) {
@@ -63,8 +63,14 @@ OrderAheadAdapter.prototype.isValidDeliveryLocation = function (res, restaurant)
     if (dist <= radius) {
       validity = true
     }else {
-      removeInvalid(restaurant)
+      _this.removeInvalid(restaurant)
     }
   })
   return validity;
+}
+
+OrderAheadAdapter.prototype.removeInvalid = function (restaurant) {
+  // move to searchController
+  var restaurantNode = $('.restaurant[data-id="'+restaurant.id+'"]')
+  restaurantNode.remove()
 }

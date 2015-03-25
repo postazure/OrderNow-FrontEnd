@@ -1,3 +1,10 @@
+var historicAdapter = new HistoricAdapter()
+var searchAdapter = new SearchAdapter()
+var orderAheadAdapter = new OrderAheadAdapter(historicAdapter)
+var searchController = new SearchController(orderAheadAdapter)
+var showController = new ShowController(searchAdapter)
+
+
 getLocation()
 
 var listSource = $('#restaurant-list').html();
@@ -5,18 +12,6 @@ var listTemplate = Handlebars.compile(listSource);
 
 var detailsSource = $('#restaurant-details').html();
 var detailsTemplate = Handlebars.compile(detailsSource);
-
-var historicAdapter = new HistoricAdapter()
-var searchAdapter = new SearchAdapter()
-var orderAheadAdapter = new OrderAheadAdapter(historicAdapter)
-var searchController = new SearchController(orderAheadAdapter)
-var showController = new ShowController(searchAdapter)
-
-function removeInvalid(restaurant) {
-  var restaurantNode = $('.restaurant[data-id="'+restaurant.id+'"]')
-  restaurantNode.remove()
-}
-
 
 $('form').on('submit', function (e) {
   e.preventDefault();

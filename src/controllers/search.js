@@ -7,7 +7,6 @@ SearchController.prototype.getResults = function (searchTerms) {
   var _this = this;
   searchAdapter.index(query, function (res) {
     if (res.records_found) {
-      window.resCount = res.results.length;
       $('#search-field').parent(".search").removeClass('loading')
       _this.setList(res.results)
     }else{
@@ -23,11 +22,11 @@ SearchController.prototype.compileSearchQuery = function (searchTerms) {
 
 SearchController.prototype.getCurrentTimes = function (restaurants, cb) {
   var _this = this;
+
   $.each(restaurants, function (i, restaurant) {
     if (restaurant.source_name === "Order Ahead") {
       _this.oaAdapter.deliveryTime(restaurant, _this.setCurrentTime)
     }
-    cb() //<--being called before data comes in, don't want to put in oaAdapter because of circular dependency
   });
 }
 
@@ -36,11 +35,10 @@ SearchController.prototype.setCurrentTime = function (restaurant) {
   $('.restaurant[data-id="'+restaurant.id+'"] .hidden').removeClass("hidden")
   $('.restaurant[data-id="'+restaurant.id+'"] .loader').remove()
   $('.restaurant[data-id="'+restaurant.id+'"]').data("deliveryTime", restaurant.delivery_time)
-
+  searchController.orderList() //needs to be decoupled
 }
 
 SearchController.prototype.orderList = function () {
-  console.log("ordering");
   var restaurantNodeList = $(".restaurant")
   restaurantNodeList.sort(function(a, b){
     return parseInt($(a).data("deliveryTime"))-parseInt($(b).data("deliveryTime"))
@@ -50,11 +48,11 @@ SearchController.prototype.orderList = function () {
 
 SearchController.prototype.setList = function (restaurants) {
   $.each(restaurants, function (i, restaurant) {
-    restaurant.delivery_time = 75;  // default
-    restaurant.valid_zone = true;   // default
+  restaurant.delivery_time = 75;  // default
+  restaurant.valid_zone = true;   // default
   })
 
-  this.getCurrentTimes(restaurants, this.orderList)
+  this.getCurrentTimes(restaurants)
   var html = listTemplate({restaurants: restaurants});
   $('#restaurant-index').html(html)
 }
