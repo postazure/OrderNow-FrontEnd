@@ -11,25 +11,25 @@
   </head>
   <body>
 
-    <div id="header">
+    <div id="main-container">
+      <div id="header">
+        <span id="gps-indicator" class="pull-right hidden"><i class="crosshairs icon"></i></span>
+        <h1>
+          Delivery Now SF
+        </h1>
 
-      <!--<span id="gps-indicator" class="pull-right hidden"><i class="crosshairs icon"></i></span>-->
-      <h1>
-        Delivery Now SF
-      </h1>
-
-      <form id="search-form">
-        <div class="ui icon input search" >
-          <input class="prompt" type="text" placeholder="Name, or Keywords..." id="search-field">
-          <i type="submit" class="search icon"></i>
-        </div>
-      </form>
-    </div>
-
+        <form id="search-form">
+          <div class="ui icon input search" >
+            <input class="prompt" type="text" placeholder="Name, or Keywords..." id="search-field">
+            <i type="submit" class="search icon"></i>
+          </div>
+        </form>
+      </div>
 
       <div id="search-container">
         <div id="restaurant-index" class="ui accordion"></div>
       </div>
+    </div>
 
 
     <script id="restaurant-list" type="text/x-handlebars-template">

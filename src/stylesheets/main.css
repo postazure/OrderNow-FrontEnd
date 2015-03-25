@@ -1,10 +1,22 @@
 body{
-  /*background-color:#6C6B7F;*/
-  background-image: url("../images/san-francisco-skyline-night.jpg");
+  background-color:#0E0E2D;
+}
+
+#main-container{
+  background-image: url("../images/san-francisco-skyline-night-full.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: auto 100%;
+}
+
+@media (min-width: 1000px) {
+/*large computer screen*/
+  #main-container {
+    width: 1000px;
+    margin-left:auto;
+    margin-right:auto;
+  }
 }
 
 #no-results {
