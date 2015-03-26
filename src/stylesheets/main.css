@@ -13,7 +13,7 @@ body{
 @media (min-width: 1000px) {
 /*large computer screen*/
   #main-container {
-    width: 1000px;
+    width: 1200px;
     margin-left:auto;
     margin-right:auto;
   }
