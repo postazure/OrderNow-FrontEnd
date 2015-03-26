@@ -3,7 +3,9 @@
   text-align:center;
   padding-bottom: 3%;
   opacity: 0.8;
-  padding-top:1%
+  padding-top:1%;
+  background-color: #47457F;
+  color: #D8D6FF;
 }
 
 #header h1{
@@ -12,11 +14,6 @@
   margin-top:0;
   margin-right:auto;
   margin-left:auto
-}
-
-#header{
-  background-color: #47457F;
-  color: #D8D6FF;
 }
 
 .title.active h4{

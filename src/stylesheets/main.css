@@ -10,6 +10,12 @@ body{
   background-size: auto 100%;
 }
 
+#main-loader {
+  overflow: hidden;
+  height: 85vh;
+  margin-top: 15vh;
+}
+
 @media (min-width: 1000px) {
 /*large computer screen*/
   #main-container {
@@ -20,7 +26,9 @@ body{
 }
 
 #no-results {
+  margin-top: 10%;
   text-align: center;
+  color: #D8D6FF;
 }
 
 /*Utility Classes*/
