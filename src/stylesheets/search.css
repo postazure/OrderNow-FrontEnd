@@ -4,5 +4,6 @@
 
 #search-container{
   height:85vh;
-  overflow:scroll;
+  overflow-y:scroll;
+  overflow-x:hidden;
 }
