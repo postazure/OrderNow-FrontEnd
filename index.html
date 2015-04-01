@@ -85,7 +85,11 @@
                 <div class="header">Tags</div>
                 <div class="ui divided horizontal list">
                   {{#each restaurant.tags}}
-                  <div class="item">{{text}}</div>
+                  <div class="item">
+                    <div class="tag ui purple basic small button">
+                      {{text}}
+                    </div>
+                  </div>
                   {{/each}}
                 </div>
               </div>

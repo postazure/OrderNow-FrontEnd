@@ -37,4 +37,12 @@ App.prototype.setupHandlers = function () {
     var yelpUrl = $(this).data("yelpurl")
     location.href = yelpUrl;
   })
+
+  $('#restaurant-index').on('click', '.tag', function (e) {
+    var tag = $(this).text().trim()
+    $('#search-field').val(tag)
+    _this.searchAction();
+  })
+
+
 }
