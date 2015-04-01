@@ -18,8 +18,11 @@ body{
 }
 
 #main-loader {
-  height: 85vh;
-  margin-top: 15vh;
+  width: 80%;
+  height: 200px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 40%;
 }
 
 @media (min-width: 1000px) {
@@ -28,6 +31,14 @@ body{
     width: 1200px;
     margin-left:auto;
     margin-right:auto;
+  }
+
+  #main-loader {
+    width: 20%;
+    height: 200px;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 20%;
   }
 }
 
