@@ -13,6 +13,27 @@ body{
   margin-top: 40%;
 }
 
+#instructions {
+  margin-right:auto;
+  margin-left:auto;
+  display: inline-block;
+}
+
+.logo{
+  width:100%
+}
+
+.logo img{
+  width:150px;
+  margin: auto;
+}
+
+@media only screen and (min-width:400px) and (max-width: 766px)  {
+  .logo{
+    width: 300px;
+  }
+}
+
 @media (min-width: 1000px) {
 /*large computer screen*/
   #main-loader {
@@ -56,14 +77,7 @@ body{
   width: 100%;
 }
 
-.logo{
-  width:100%
-}
 
-.logo img{
-  width:150px;
-  margin: auto;
-}
 
 .divider{
   height:5px;

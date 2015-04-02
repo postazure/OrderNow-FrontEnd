@@ -28,7 +28,14 @@
       </div>
 
       <div id="search-container">
-        <div id="restaurant-index" class="ui accordion"></div>
+        <div id="restaurant-index" class="ui accordion">
+          <div id="instructions">
+            <p>Search for a Restaurant by name or Category.</p>
+            <p>Thai, Chinese, Bakery...</p>
+            <p></p>
+            <p>You'll be eating before you know it.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -58,11 +65,13 @@
       <div class="ui stackable grid">
         <div class="four wide column">
           <div class="logo">
-            <img class="ui medium rounded image" src={{restaurant.logo_url}}>
-            <div class="divider"></div>
-            <div class="ui purple button visit-source">View Menu</div>
-            <div class="divider"></div>
-            <div class="ui youtube button visit-yelp" data-yelpurl={{restaurant.yelp_url}}><i class="yelp icon"></i> Yelp</div>
+            <div class="ui attached segment">
+              <img class="ui medium rounded image" src={{restaurant.logo_url}}>
+            </div>
+
+            <div class="ui purple bottom attached button visit-source">View Menu</div>
+
+            <div class="ui youtube bottom attached button visit-yelp" data-yelpurl={{restaurant.yelp_url}}><i class="yelp icon"></i> Yelp</div>
           </div>
         </div>
 

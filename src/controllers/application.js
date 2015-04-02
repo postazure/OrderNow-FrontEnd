@@ -32,12 +32,14 @@ App.prototype.setupHandlers = function () {
 
   // Visit External (Yelp, Provider)
   $('#restaurant-index').on('click', '.visit-source', function (e) {
+    $(this).addClass("loading")
     var sourceUrl = $(this).parents('.restaurant').data("sourceurl")
       .replace(".json?client_name=computer","");
     location.href = sourceUrl;
   })
 
   $('#restaurant-index').on('click', '.visit-yelp', function (e) {
+    $(this).addClass("loading")
     var yelpUrl = $(this).data("yelpurl")
     location.href = yelpUrl;
   })
