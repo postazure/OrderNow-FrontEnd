@@ -7,11 +7,11 @@ SearchController.prototype.getResults = function (searchTerms) {
   var _this = this;
   searchAdapter.index(query, function (res) {
     if (res.records_found) {
-      $('#main-loader').remove()
+      $('#main-loader').remove();
       _this.setList(res.results)
     }else{
       $('#restaurant-index').html("<h1 id='no-results'>Sorry No Results Found</h1>")
-      $("#main-loader").fadeOut();
+      $("#main-loader").remove();
     }
   });
 };

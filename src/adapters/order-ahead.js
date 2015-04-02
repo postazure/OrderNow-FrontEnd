@@ -24,11 +24,18 @@ OrderAheadAdapter.prototype.deliveryTime = function (restaurant, cb) {
   $.ajax({
     url: this.url + this.restaurantId(restaurant) + this.suffix,
     success:function (res) {
+      restaurant.open = res["open_now?"];
+      restaurant.accepting_orders = !res.not_accepting_orders;
+
       restaurant.delivery_time = _this.getDeliveryTime(res);
       restaurant.valid_zone = _this.isValidDeliveryLocation(res, restaurant);
 
-      _this.historicAdapter.report(restaurant);
-      cb(restaurant)
+      if (restaurant.valid_zone && restaurant.open && restaurant.accepting_orders) {
+        _this.historicAdapter.report(restaurant);
+        cb(restaurant)
+      } else {
+        _this.removeInvalid(restaurant)
+      }
     }
   });
 }
@@ -42,31 +49,36 @@ OrderAheadAdapter.prototype.getPrepTime = function (res) {
 }
 
 OrderAheadAdapter.prototype.getTimeFromDistance = function (res) {
-  var latitude = res.latitude;
-  var longitude = res.longitude;
-  var mile_interval = res.store_scaling_delivery_attributes.mile_interval;
-  var minute_increment = res.store_scaling_delivery_attributes.minute_increment;
-  var dist = getDistance(latitude, longitude, "M")
-  return (dist*mile_interval*minute_increment)
+
+  try {
+    var latitude = res.latitude;
+    var longitude = res.longitude;
+    var mile_interval = res.store_scaling_delivery_attributes.mile_interval;
+    var minute_increment = res.store_scaling_delivery_attributes.minute_increment;
+    var dist = getDistance(latitude, longitude, "M")
+    return (dist*mile_interval*minute_increment)
+  }catch(err) {
+    return (20) //default 20min buffer
+  }
 }
 
 OrderAheadAdapter.prototype.isValidDeliveryLocation = function (res, restaurant) {
   if (!window.clientLat) { return true }
-  var _this = this;
-  var store_delivery_zones = res.store_delivery_zones;
-  var validity = false
-  $.each(store_delivery_zones, function (i, geo) {
-    var radius = parseFloat(geo.radius);
-    var lat = parseFloat(geo.latitude);
-    var lng = parseFloat(geo.longitude);
-    var dist = getDistance(lat, lng, "M")
-    if (dist <= radius) {
-      validity = true
-    }else {
-      _this.removeInvalid(restaurant)
-    }
-  })
-  return validity;
+  try {
+    var _this = this;
+    var store_delivery_zones = res.store_delivery_zones;
+    var validity = false
+    $.each(store_delivery_zones, function (i, geo) {
+      var radius = parseFloat(geo.radius);
+      var lat = parseFloat(geo.latitude);
+      var lng = parseFloat(geo.longitude);
+      var dist = getDistance(lat, lng, "M")
+      if (dist <= radius) { validity = true }
+    })
+    return validity;
+  } catch(err) {
+    return true;
+  }
 }
 
 OrderAheadAdapter.prototype.removeInvalid = function (restaurant) {
