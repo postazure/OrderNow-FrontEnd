@@ -30,7 +30,7 @@ OrderAheadAdapter.prototype.deliveryTime = function (restaurant, cb) {
       restaurant.delivery_time = _this.getDeliveryTime(res);
       restaurant.valid_zone = _this.isValidDeliveryLocation(res, restaurant);
 
-      if (restaurant.valid_zone && restaurant.open && restaurant.accepting_orders) {
+      if (restaurant.valid_zone ){//&& restaurant.open && restaurant.accepting_orders) {
         _this.historicAdapter.report(restaurant);
         cb(restaurant)
       } else {

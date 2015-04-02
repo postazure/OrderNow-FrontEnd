@@ -48,8 +48,8 @@ SearchController.prototype.orderList = function () {
 
 SearchController.prototype.setList = function (restaurants) {
   $.each(restaurants, function (i, restaurant) {
-  restaurant.delivery_time = 75;  // default
-  restaurant.valid_zone = true;   // default
+    restaurant.delivery_time = 75;  // default
+    restaurant.valid_zone = true;   // default
   })
 
   this.getCurrentTimes(restaurants)

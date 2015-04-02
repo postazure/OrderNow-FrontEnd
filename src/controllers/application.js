@@ -1,5 +1,6 @@
 var App = function (search, show) {
   $('.ui.accordion').accordion('refresh');
+  this.handlebarsHelpers()
   this.search = search
   this.show = show
   getLocation()
@@ -54,4 +55,19 @@ App.prototype.setupHandlers = function () {
   $('#search-field').focusout(function() {
     $(this).val("");
   })
+}
+
+App.prototype.handlebarsHelpers = function () {
+  Handlebars.registerHelper('stars', function(n, color) {
+    var accum = '';
+    var fullStars = Math.floor(n);
+    var halfStar = (n - fullStars) ? 1 : 0
+    for(var i = 0; i < n-halfStar; ++i){
+      accum += '<i class="'+color+' star icon"></i>'
+    }
+    if (halfStar) {
+      accum += '<i class="'+color+' star half icon"></i>'
+    }
+    return accum;
+  });
 }
