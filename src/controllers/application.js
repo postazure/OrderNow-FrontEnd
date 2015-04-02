@@ -8,11 +8,14 @@ var App = function (search, show) {
 
 App.prototype.searchAction = function () {
   $('#search-field').parent(".search").addClass('loading')
-  $("#restaurant-index").append("<div id='main-loader' class='ui active dimmer'><div class='ui text loader'>Searching...</div></div>")
+  // $("#restaurant-index").append("<div id='main-loader' class='ui active dimmer'><div class='ui text loader'>Searching...</div></div>")
+  $("#search-container").append("<div id='main-loader'><ul class='spinner'><li></li><li></li><li></li><li></li></ul></div>")
   this.search.getResults($('#search-field').val());
   $('#search-field').val("")
   $('#search-field').blur();
 }
+
+
 
 App.prototype.setupHandlers = function () {
   var _this = this;
