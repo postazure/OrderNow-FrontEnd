@@ -44,12 +44,12 @@
             <span class="ui small active inline loader pull-right"></span>
 
             <span class="ui pull-right hidden">
-              <i class="clock icon"></i>
               <span class="delivery-time">{{delivery_time}}</span>
+              <i class="clock icon"></i>
             </span>
           </h4>
         </div>
-        <div class="ui segment content"></div>
+        <div class="content"></div>
       </div>
       {{/each}}
     </script>
@@ -58,7 +58,7 @@
       <div class="ui stackable grid">
         <div class="four wide column">
           <div class="logo">
-            <img class="ui small rounded image" src={{restaurant.logo_url}}>
+            <img class="ui medium rounded image" src={{restaurant.logo_url}}>
             <div class="divider"></div>
             <div class="ui purple button visit-source">View Menu</div>
             <div class="divider"></div>
@@ -83,15 +83,11 @@
             {{#if restaurant.tags}}
               <div class="item">
                 <div class="header">Tags</div>
-                <div class="ui divided horizontal list">
                   {{#each restaurant.tags}}
-                  <div class="item">
                     <div class="tag ui purple basic small button">
                       {{text}}
                     </div>
-                  </div>
                   {{/each}}
-                </div>
               </div>
             {{/if}}
           </div>

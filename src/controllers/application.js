@@ -20,6 +20,10 @@ App.prototype.setupHandlers = function () {
     _this.searchAction();
   })
 
+  $('form [type="submit"]').on('click', function () {
+    _this.searchAction();
+  })
+
   // Show
   $('#restaurant-index').on('click','.restaurant', function (e) {
     e.preventDefault();

@@ -1,15 +1,25 @@
 .restaurant{
-  border-color:#6C6B7F;
-  background-color: #D8D6FF;
-  opacity: 0.85;
-
+  background: white	;
   padding-left: 4%;
   padding-right: 4%;
   padding-bottom: 1%;
   padding-top: 1%;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 5px;
-  /*margin-left: 3px;
-  margin-right: 3px;*/
+  margin:10px;
+  box-shadow: 0px 10px 20px rgba(22, 22, 22, 0.3);
+}
+
+.title {
+  color: rgba(48,48,48,1) !important;
+
+}
+
+.content .header{
+  color: #1A6E94 !important;
+}
+
+.content {
+  padding: 15px;
+  opacity:1;
+  margin-bottom:1%;
+  /*color: #1A6E94 !important;*/
 }

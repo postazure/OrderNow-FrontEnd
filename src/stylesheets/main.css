@@ -1,20 +1,8 @@
-/*html {
-  overflow-x: hidden;
-  overflow-y: hidden;
-}*/
 
 body{
-  background-color:#0E0E2D;
   overflow-x: hidden;
   overflow-y: hidden;
-}
-
-#main-container{
-  background-image: url("../images/san-francisco-skyline-night-full.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: auto 100%;
+  background-color:#08404b;
 }
 
 #main-loader {
@@ -27,12 +15,6 @@ body{
 
 @media (min-width: 1000px) {
 /*large computer screen*/
-  #main-container {
-    width: 1200px;
-    margin-left:auto;
-    margin-right:auto;
-  }
-
   #main-loader {
     width: 20%;
     height: 200px;
@@ -45,7 +27,7 @@ body{
 #no-results {
   margin-top: 10%;
   text-align: center;
-  color: #D8D6FF;
+  color: white;
 }
 
 /*Utility Classes*/
