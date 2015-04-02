@@ -1,4 +1,5 @@
 var SearchAdapter = function () {
+  // this.url = "http://deliverynowsf.mybluemix.net/restaurants/";
   this.url = "https://delivery-now-sf.herokuapp.com/restaurants/";
   // this.url = "http://localhost:3000/restaurants/";
 }
