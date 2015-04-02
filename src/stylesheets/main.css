@@ -14,9 +14,16 @@ body{
 }
 
 #instructions {
+  color: white;
+  font-size: 150%;
+	font-weight: 400;
+	font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  width:70%;
+  margin-top: 10%;
   margin-right:auto;
   margin-left:auto;
-  display: inline-block;
+  font-family: 'Lato', sans-serif;
 }
 
 .logo{

@@ -4,11 +4,13 @@
     <title>DeliveryNowSF</title>
     <link rel="icon" type="image/png" href="src/images/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Cookie' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="bower_components/semantic-ui/dist/semantic.min.css">
     <link rel="stylesheet" href="src/stylesheets/main.css">
     <link rel="stylesheet" href="src/stylesheets/header.css">
     <link rel="stylesheet" href="src/stylesheets/restaurant-list.css">
     <link rel="stylesheet" href="src/stylesheets/search.css">
+    <link rel="stylesheet" href="src/stylesheets/nao.css">
   </head>
   <body>
 
@@ -20,20 +22,29 @@
         </h1>
 
         <form id="search-form">
-          <div class="ui icon input search" >
+          <div class="input input--nao">
+  					<input id="search-field" class="input__field input__field--nao" type="text" id="input-1" />
+  					<label class="input__label input__label--nao" for="input-1">
+  						<span class="input__label-content input__label-content--nao">Search</span>
+  					</label>
+  					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+  						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+  					</svg>
+  				</div>
+
+          <!--<div class="ui icon input search" >
             <input class="prompt" type="text" placeholder="Name, or Keywords..." id="search-field">
             <i type="submit" class="search icon"></i>
-          </div>
+          </div>-->
         </form>
       </div>
 
       <div id="search-container">
         <div id="restaurant-index" class="ui accordion">
           <div id="instructions">
-            <p>Search for a Restaurant by name or Category.</p>
+            <p>Search by Restaurant name or Category.</p>
             <p>Thai, Chinese, Bakery...</p>
-            <p></p>
-            <p>You'll be eating before you know it.</p>
+
           </div>
         </div>
       </div>
@@ -92,11 +103,13 @@
             {{#if restaurant.tags}}
               <div class="item">
                 <div class="header">Tags</div>
+                <div class="ui list">
                   {{#each restaurant.tags}}
-                    <div class="tag ui purple basic small button">
+                    <a class="tag item">
                       {{text}}
-                    </div>
+                    </a>
                   {{/each}}
+                </div>
               </div>
             {{/if}}
           </div>

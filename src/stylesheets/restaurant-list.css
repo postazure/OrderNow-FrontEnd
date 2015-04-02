@@ -12,15 +12,17 @@
 
 .title {
   color: rgba(48,48,48,1) !important;
-
+  font-family: 'Lato', sans-serif;
 }
 
 .content .header{
   color: #1A6E94 !important;
+  font-family: 'Lato', sans-serif;
 }
 
 .content {
   padding: 15px;
   opacity:1;
   margin-bottom:3%;
+  font-family: 'Lato', sans-serif;
 }

@@ -9,6 +9,7 @@ App.prototype.searchAction = function () {
   $('#search-field').parent(".search").addClass('loading')
   $("#restaurant-index").append("<div id='main-loader' class='ui active dimmer'><div class='ui text loader'>Searching...</div></div>")
   this.search.getResults($('#search-field').val());
+  $('#search-field').val("")
   $('#search-field').blur();
 }
 
