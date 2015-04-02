@@ -7,10 +7,9 @@ var App = function (search, show) {
 }
 
 App.prototype.searchAction = function () {
-  $('#search-field').parent(".search").addClass('loading')
   $("#search-container").append("<div id='main-loader'><ul class='spinner'><li></li><li></li><li></li><li></li></ul></div>")
   this.search.getResults($('#search-field').val());
-  $('#search-field').val("")
+  $('#instructions').fadeOut()
   $('#search-field').blur();
 }
 
