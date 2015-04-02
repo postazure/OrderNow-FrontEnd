@@ -73,15 +73,7 @@
       <div class="ui stackable grid">
         <div class="four wide column">
           <div class="logo">
-            <div class="ui tertiary segment">
-              <img class="ui medium rounded image" src={{restaurant.logo_url}}>
-              <div class="ui divider"></div>
-              <div class="ui buttons external-nav">
-                <div class="ui blue button visit-source">Menu</div>
-                <div class="or"></div>
-                <div class="ui red button visit-yelp" data-yelpurl={{restaurant.yelp_url}}>Yelp</div>
-              </div>
-            </div>
+            <img class="ui medium rounded image" src={{restaurant.logo_url}}>
           </div>
         </div>
 
@@ -99,6 +91,7 @@
               <div class="header">Delivery Service</div>
               {{restaurant.source_name}}
             </div>
+            
             {{#if restaurant.tags}}
               <div class="item">
                 <div class="header">Tags</div>
@@ -111,6 +104,14 @@
                 </div>
               </div>
             {{/if}}
+
+            <div class="item">
+              <div class="ui buttons">
+                <div class="ui blue button visit-source">Menu</div>
+                <div class="or"></div>
+                <div class="ui red button visit-yelp" data-yelpurl={{restaurant.yelp_url}}>Yelp</div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="eight wide column">
