@@ -1,4 +1,5 @@
 var App = function (search, show) {
+  $('.ui.accordion').accordion('refresh');
   this.search = search
   this.show = show
   getLocation()
