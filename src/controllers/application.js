@@ -51,4 +51,8 @@ App.prototype.setupHandlers = function () {
     $('#search-field').val(tag)
     _this.searchAction();
   })
+
+  $('#search-field').focusout(function() {
+    $(this).val("");
+  })
 }
