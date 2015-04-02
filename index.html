@@ -42,7 +42,7 @@
             <p>Thai, Chinese, Bakery...</p>
 
           </div>
-          
+
         </div>
       </div>
     </div>
@@ -73,13 +73,15 @@
       <div class="ui stackable grid">
         <div class="four wide column">
           <div class="logo">
-            <div class="ui attached segment">
+            <div class="ui tertiary segment">
               <img class="ui medium rounded image" src={{restaurant.logo_url}}>
+              <div class="ui divider"></div>
+              <div class="ui buttons external-nav">
+                <div class="ui blue button visit-source">Menu</div>
+                <div class="or"></div>
+                <div class="ui red button visit-yelp" data-yelpurl={{restaurant.yelp_url}}>Yelp</div>
+              </div>
             </div>
-
-            <div class="ui purple bottom attached button visit-source">View Menu</div>
-
-            <div class="ui youtube bottom attached button visit-yelp" data-yelpurl={{restaurant.yelp_url}}><i class="yelp icon"></i> Yelp</div>
           </div>
         </div>
 
