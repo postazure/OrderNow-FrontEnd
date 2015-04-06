@@ -27,6 +27,10 @@
   font-family: 'Lato', sans-serif;
 }
 
+.content .active {
+  padding-bottom: 10%;
+}
+
 
 .restaurant-head{
   width: 160px;
