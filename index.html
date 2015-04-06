@@ -18,9 +18,11 @@
     <div id="main-container">
       <div id="header">
         <span id="gps-indicator" class="pull-right hidden"><i class="crosshairs icon"></i></span>
-        <h1>
-          Delivery Now SF
-        </h1>
+        <div class="site-logo">          
+          <h1>
+            Delivery Now SF
+          </h1>
+        </div>
 
         <form id="search-form">
           <div class="input input--nao">
@@ -72,8 +74,17 @@
     <script id="restaurant-details" type="text/x-handlebars-template">
       <div class="ui stackable grid">
         <div class="four wide column">
-          <div class="logo">
-            <img class="ui medium rounded image" src={{restaurant.logo_url}}>
+          <div class="restaurant-head">
+            <div class="logo">
+              <img class="ui rounded image" src={{restaurant.logo_url}}>
+            </div>
+            <div class="external-nav">
+              <div class="ui buttons">
+                <div class="ui blue button visit-source">Menu</div>
+                <div class="or"></div>
+                <div class="ui red button visit-yelp" data-yelpurl={{restaurant.yelp_url}}>Yelp</div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -95,23 +106,17 @@
             {{#if restaurant.tags}}
               <div class="item">
                 <div class="header">Tags</div>
-                <div class="ui list">
-                  {{#each restaurant.tags}}
-                    <a class="tag item">
-                      {{text}}
-                    </a>
-                  {{/each}}
+                {{#each restaurant.tags}}
+                  <div>
+                  <a class="tag">
+                    {{text}}
+                  </a>
                 </div>
+                {{/each}}
               </div>
             {{/if}}
 
-            <div class="item">
-              <div class="ui buttons">
-                <div class="ui blue button visit-source">Menu</div>
-                <div class="or"></div>
-                <div class="ui red button visit-yelp" data-yelpurl={{restaurant.yelp_url}}>Yelp</div>
-              </div>
-            </div>
+
           </div>
         </div>
         <div class="eight wide column">

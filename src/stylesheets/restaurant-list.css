@@ -26,3 +26,19 @@
   margin-bottom:3%;
   font-family: 'Lato', sans-serif;
 }
+
+
+.restaurant-head{
+  width: 160px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.restaurant-head img{
+  width:160px;
+}
+.restaurant-head .external-nav{
+  width: 157px;
+  margin-right: 0%;
+  margin-left: auto;
+
+}
